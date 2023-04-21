@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome, {{ current_user.username }}!</title>
+</head>
+<body>
+  <h1>Welcome, {{ current_user.username }}!</h1>
+  <a href="{{ url_for('logout') }}">Выйти</a>
+
+  {% if current_user.role in ['admin', 'seller'] %}
+    <a href="">админ панель</a>
+  {% endif %}
+
+</body>
+</html>
